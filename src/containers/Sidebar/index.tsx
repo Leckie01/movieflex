@@ -14,7 +14,7 @@ const Sidebar = () => {
             Movies
           </S.NavListItem>
         </S.NavListItemLink>
-        <S.NavListItemLink to="/tv?hello=Leckie">
+        <S.NavListItemLink to="/tv">
           <S.NavListItem current={pathname === "/tv"}>
             <S.NavListItemIcon icon={faTv} />
             TV
