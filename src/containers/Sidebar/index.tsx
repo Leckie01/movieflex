@@ -1,9 +1,10 @@
 import React from "react";
 import * as S from "./styles";
 import { faVideo, faTv, faSearch } from "@fortawesome/free-solid-svg-icons";
-import { withRouter, RouteComponentProps } from "react-router";
+import { useLocation } from "react-router";
 
-const Sidebar: React.FC<RouteComponentProps> = ({ location: { pathname } }) => {
+const Sidebar = () => {
+  const { pathname } = useLocation();
   return (
     <S.NavContainer>
       <S.NavList>
@@ -13,7 +14,7 @@ const Sidebar: React.FC<RouteComponentProps> = ({ location: { pathname } }) => {
             Movies
           </S.NavListItem>
         </S.NavListItemLink>
-        <S.NavListItemLink to="/tv">
+        <S.NavListItemLink to="/tv?hello=Leckie">
           <S.NavListItem current={pathname === "/tv"}>
             <S.NavListItemIcon icon={faTv} />
             TV
@@ -22,7 +23,7 @@ const Sidebar: React.FC<RouteComponentProps> = ({ location: { pathname } }) => {
         <S.NavListItemLink to="/search">
           <S.NavListItem current={pathname === "/search"}>
             <S.NavListItemIcon icon={faSearch} />
-            Search`
+            Search
           </S.NavListItem>
         </S.NavListItemLink>
       </S.NavList>
@@ -30,4 +31,4 @@ const Sidebar: React.FC<RouteComponentProps> = ({ location: { pathname } }) => {
   );
 };
 
-export default withRouter(Sidebar);
+export default Sidebar;
