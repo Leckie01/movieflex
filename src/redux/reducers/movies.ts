@@ -31,31 +31,31 @@ const moviesReducer = (prevState = initialState, action: ActionTypes) => {
     case GET_MOVIES_NOW_PLAYING: {
       return {
         ...prevState,
-        data: action.data
+        nowPlaying: action.data
       };
     }
     case GET_MOVIES_TOP_RATED: {
       return {
         ...prevState,
-        data: action.data
+        topRated: action.data
       };
     }
     case GET_MOVIES_POPULAR: {
       return {
         ...prevState,
-        data: action.data
+        popular: action.data
       };
     }
     case GET_MOVIES_UPCOMING: {
       return {
         ...prevState,
-        data: action.data
+        upcoming: action.data
       };
     }
     case GET_MOVIES_DETAIL: {
       return {
         ...prevState,
-        data: action.data
+        detail: action.data
       };
     }
     default:

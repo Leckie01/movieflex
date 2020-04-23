@@ -1,22 +1,12 @@
 import { useEffect, useState } from "react";
 import { AxiosPromise, AxiosResponse } from "axios";
-import { ICommonMovie } from "../types/types";
 
-interface IArgs {
-  (promiseCreator: { (): AxiosPromise }, deps: []): [
-    boolean,
-    AxiosResponse<IResults> | null,
-    boolean
-  ];
-}
-
-interface IResults {
-  results: ICommonMovie[];
-}
-
-const usePromise: IArgs = (promiseCreator, deps) => {
+const usePromise = <S>(
+  promiseCreator: { (): AxiosPromise },
+  deps: []
+): [boolean, AxiosResponse<S> | null, boolean] => {
   const [loading, setLoading] = useState<boolean>(false);
-  const [resolved, setResolved] = useState<AxiosResponse | null>(null);
+  const [resolved, setResolved] = useState<AxiosResponse<S> | null>(null);
   const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {

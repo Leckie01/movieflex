@@ -1,4 +1,4 @@
-import { COMMON_MOVIE_TYPE } from "../../types/types";
+import { ICommonMovie } from "../../types/types";
 
 // 액션 타입
 export const GET_MOVIES_NOW_PLAYING = "GET_MOVIES_NOW_PLAYING";
@@ -10,31 +10,31 @@ export const GET_MOVIES_DETAIL = "GET_MOVIES_DETAIL";
 // 액션 인터페이스
 export interface GetMoviesNowPlayingAction {
   type: typeof GET_MOVIES_NOW_PLAYING;
-  data: COMMON_MOVIE_TYPE[];
+  data: ICommonMovie[];
 }
 
 export interface GetMoviesTopRatedAction {
   type: typeof GET_MOVIES_TOP_RATED;
-  data: COMMON_MOVIE_TYPE[];
+  data: ICommonMovie[];
 }
 
 export interface GetMoviesPopularAction {
   type: typeof GET_MOVIES_POPULAR;
-  data: COMMON_MOVIE_TYPE[];
+  data: ICommonMovie[];
 }
 
 export interface GetMoviesUpcomingAction {
   type: typeof GET_MOVIES_UPCOMING;
-  data: COMMON_MOVIE_TYPE[];
+  data: ICommonMovie[];
 }
 
 export interface GetMoviesDetailAction {
   type: typeof GET_MOVIES_DETAIL;
-  data: COMMON_MOVIE_TYPE[];
+  data: ICommonMovie[];
 }
 
 export const getMoviesNowPlaying = (
-  data: COMMON_MOVIE_TYPE[]
+  data: ICommonMovie[]
 ): GetMoviesNowPlayingAction => {
   return {
     type: GET_MOVIES_NOW_PLAYING,
@@ -44,7 +44,7 @@ export const getMoviesNowPlaying = (
 
 // 액션
 export const getMoviesTopRated = (
-  data: COMMON_MOVIE_TYPE[]
+  data: ICommonMovie[]
 ): GetMoviesTopRatedAction => {
   return {
     type: GET_MOVIES_TOP_RATED,
@@ -53,7 +53,7 @@ export const getMoviesTopRated = (
 };
 
 export const getMoviesPopular = (
-  data: COMMON_MOVIE_TYPE[]
+  data: ICommonMovie[]
 ): GetMoviesPopularAction => {
   return {
     type: GET_MOVIES_POPULAR,
@@ -62,7 +62,7 @@ export const getMoviesPopular = (
 };
 
 export const getMoviesUpcoming = (
-  data: COMMON_MOVIE_TYPE[]
+  data: ICommonMovie[]
 ): GetMoviesUpcomingAction => {
   return {
     type: GET_MOVIES_UPCOMING,
@@ -71,7 +71,7 @@ export const getMoviesUpcoming = (
 };
 
 export const getMoviesDetail = (
-  data: COMMON_MOVIE_TYPE[]
+  data: ICommonMovie[]
 ): GetMoviesDetailAction => {
   return {
     type: GET_MOVIES_DETAIL,
