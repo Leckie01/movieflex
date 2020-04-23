@@ -6,7 +6,7 @@ Movie Application with Typescript, Hooks
 
 ## Pages
 
-- [ ] Movies
-- [ ] TV
-- [ ] Detail
-- [ ] Search
+- [x] Movies
+- [x] TV
+- [x] Detail
+- [x] Search
