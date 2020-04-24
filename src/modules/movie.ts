@@ -129,9 +129,17 @@ const actions = {
 type ActionAsyncTypes = ActionType<typeof actions>;
 
 const movie = createReducer<IInitialState, ActionAsyncTypes>(initialState, {
+  [GET_NOWPLAYING]: state => ({
+    ...state,
+    nowPlaying: {
+      ...state.nowPlaying,
+      isLoading: true
+    }
+  }),
   [GET_NOWPLAYING_SUCCESS]: (state, action) => ({
     ...state,
     nowPlaying: {
+      ...state.nowPlaying,
       movies: action.payload,
       isLoading: false,
       isLoaded: true,
@@ -141,6 +149,115 @@ const movie = createReducer<IInitialState, ActionAsyncTypes>(initialState, {
   [GET_NOWPLAYING_FAILURE]: (state, action) => ({
     ...state,
     nowPlaying: {
+      ...state.nowPlaying,
+      movies: null,
+      isLoading: false,
+      isLoaded: false,
+      error: action.payload
+    }
+  }),
+  [GET_TOP_RATED]: state => ({
+    ...state,
+    nowPlaying: {
+      ...state.nowPlaying,
+      isLoading: true
+    }
+  }),
+  [GET_TOP_RATED_SUCCESS]: (state, action) => ({
+    ...state,
+    nowPlaying: {
+      ...state.nowPlaying,
+      movies: action.payload,
+      isLoading: false,
+      isLoaded: true,
+      error: null
+    }
+  }),
+  [GET_TOP_RATED_FAILURE]: (state, action) => ({
+    ...state,
+    nowPlaying: {
+      ...state.nowPlaying,
+      movies: null,
+      isLoading: false,
+      isLoaded: false,
+      error: action.payload
+    }
+  }),
+  [GET_UPCOMING]: state => ({
+    ...state,
+    nowPlaying: {
+      ...state.nowPlaying,
+      isLoading: true
+    }
+  }),
+  [GET_UPCOMING_SUCCESS]: (state, action) => ({
+    ...state,
+    nowPlaying: {
+      ...state.nowPlaying,
+      movies: action.payload,
+      isLoading: false,
+      isLoaded: true,
+      error: null
+    }
+  }),
+  [GET_UPCOMING_FAILURE]: (state, action) => ({
+    ...state,
+    nowPlaying: {
+      ...state.nowPlaying,
+      movies: null,
+      isLoading: false,
+      isLoaded: false,
+      error: action.payload
+    }
+  }),
+  [GET_POPULAR]: state => ({
+    ...state,
+    nowPlaying: {
+      ...state.nowPlaying,
+      isLoading: true
+    }
+  }),
+  [GET_POPULAR_SUCCESS]: (state, action) => ({
+    ...state,
+    nowPlaying: {
+      ...state.nowPlaying,
+      movies: action.payload,
+      isLoading: false,
+      isLoaded: true,
+      error: null
+    }
+  }),
+  [GET_POPULAR_FAILURE]: (state, action) => ({
+    ...state,
+    nowPlaying: {
+      ...state.nowPlaying,
+      movies: null,
+      isLoading: false,
+      isLoaded: false,
+      error: action.payload
+    }
+  }),
+  [GET_DETAIL]: state => ({
+    ...state,
+    nowPlaying: {
+      ...state.nowPlaying,
+      isLoading: true
+    }
+  }),
+  [GET_DETAIL_SUCCESS]: (state, action) => ({
+    ...state,
+    nowPlaying: {
+      ...state.nowPlaying,
+      movies: action.payload,
+      isLoading: false,
+      isLoaded: true,
+      error: null
+    }
+  }),
+  [GET_DETAIL_FAILURE]: (state, action) => ({
+    ...state,
+    nowPlaying: {
+      ...state.nowPlaying,
       movies: null,
       isLoading: false,
       isLoaded: false,
@@ -148,3 +265,5 @@ const movie = createReducer<IInitialState, ActionAsyncTypes>(initialState, {
     }
   })
 });
+
+export default movie;

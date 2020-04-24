@@ -2,8 +2,10 @@ import React from "react";
 import Router from "./components/Router";
 import GlobalStyles from "./styles/GlobalStyles";
 import { Provider } from "react-redux";
-import store from "./redux/store";
-import axios from "axios";
+import rootReducer from "./modules";
+import { createStore } from "redux";
+
+const store = createStore(rootReducer);
 
 const App = () => {
   return (

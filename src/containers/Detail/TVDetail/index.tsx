@@ -103,6 +103,7 @@ const DetailSeasons = styled.div`
   width: 100%;
   height: 15vw;
   min-width: 10vw;
+
 `;
 
 const TVDetailContainer = () => {
