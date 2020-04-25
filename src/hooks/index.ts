@@ -23,7 +23,7 @@ const usePromise = <S>(
     };
 
     process();
-  }, deps);
+  }, [promiseCreator, deps]);
 
   return [loading, resolved, error];
 };

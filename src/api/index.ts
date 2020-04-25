@@ -16,10 +16,10 @@ export const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/";
 export const VIDEO_BASE_URL = "https://www.youtube.com/embed/";
 
 export const moviesApi = {
-  nowPlaying: () => api.get("movie/now_playing"),
-  topRated: () => api.get("movie/top_rated"),
-  popular: () => api.get("movie/popular"),
-  upcoming: () => api.get("movie/upcoming"),
+  nowPlaying: async () => await api.get("movie/now_playing"),
+  topRated: async () => await api.get("movie/top_rated"),
+  popular: async () => await api.get("movie/popular"),
+  upcoming: async () => await api.get("movie/upcoming"),
   detail: (movie_id: number) =>
     api.get(`movie/${movie_id}`, {
       params: { append_to_response: "videos" }
