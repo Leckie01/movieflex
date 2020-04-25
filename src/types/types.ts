@@ -37,3 +37,5 @@ export interface ISeasons {
   poster_path: string;
   season_number: number;
 }
+
+declare module "*.svg";

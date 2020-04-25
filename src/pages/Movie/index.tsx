@@ -1,9 +1,9 @@
 import React from "react";
 import { Container } from "./styles";
-import MoviesSection from "../../../components/MoviesSection";
-import Poster from "../../../components/Poster";
-import { IMovies } from "../../../modules/movie";
-import useMovies from "../../../hooks/useMovies";
+import MoviesSection from "../../components/MoviesSection";
+import Poster from "../../components/Poster";
+import { IMovies } from "../../modules/movie";
+import useMovies from "../../hooks/useMovies";
 
 const MoviesContainer = () => {
   const { nowPlaying, popular, topRated, upcoming } = useMovies() as IMovies;

@@ -7,7 +7,6 @@ import Poster from "../../components/Poster";
 
 const SearchContainer = styled.div`
   position: relative;
-  left: 120px;
   top: 20px;
 `;
 
@@ -17,10 +16,10 @@ const Input = styled.input`
   background-color: inherit;
   color: white;
   height: 40px;
-  font-size: 20px;
+  font-size: 25px;
   padding: 10px;
   ::placeholder {
-    font-size: 20px;
+    font-size: 25px;
     text-align: start;
   }
 `;
@@ -69,7 +68,7 @@ const Search = () => {
           ))}
         </MoviesSection>
       ) : (
-        ""
+        <div>영화 검색 결과가 존재하지 않습니다.</div>
       )}
       {tvResults.length > 0 ? (
         <MoviesSection title="TV 프로그램 검색 결과">
@@ -78,7 +77,7 @@ const Search = () => {
           ))}
         </MoviesSection>
       ) : (
-        ""
+        <div>TV프로그램 검색 결과가 존재하지 않습니다.</div>
       )}
     </SearchContainer>
   );

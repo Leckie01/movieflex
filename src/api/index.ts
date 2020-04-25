@@ -31,10 +31,10 @@ export const moviesApi = {
 };
 
 export const tvApi = {
-  onTheAir: () => api.get("/tv/on_the_air"),
-  topRated: () => api.get("/tv/top_rated"),
-  popular: () => api.get("/tv/popular"),
-  airingToday: () => api.get("/tv/airing_today"),
+  onTheAir: async () => await api.get("/tv/on_the_air"),
+  topRated: async () => await api.get("/tv/top_rated"),
+  popular: async () => await api.get("/tv/popular"),
+  airingToday: async () => await api.get("/tv/airing_today"),
   detail: (tv_id: number) =>
     api.get(`tv/${tv_id}`, {
       params: { append_to_response: "seasons" }
