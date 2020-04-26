@@ -20,8 +20,8 @@ export const moviesApi = {
   topRated: async () => await api.get("movie/top_rated"),
   popular: async () => await api.get("movie/popular"),
   upcoming: async () => await api.get("movie/upcoming"),
-  detail: (movie_id: number) =>
-    api.get(`movie/${movie_id}`, {
+  detail: async (movie_id: number) =>
+    await api.get(`movie/${movie_id}`, {
       params: { append_to_response: "videos" },
     }),
   search: async (term: string) =>
@@ -35,8 +35,8 @@ export const tvApi = {
   topRated: async () => await api.get("/tv/top_rated"),
   popular: async () => await api.get("/tv/popular"),
   airingToday: async () => await api.get("/tv/airing_today"),
-  detail: (tv_id: number) =>
-    api.get(`tv/${tv_id}`, {
+  detail: async (tv_id: number) =>
+    await api.get(`tv/${tv_id}`, {
       params: { append_to_response: "seasons" },
     }),
   search: async (term: string) =>

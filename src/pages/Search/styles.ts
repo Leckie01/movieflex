@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import Loader from "react-loader-spinner";
+
+export const LoaderDots = styled(Loader)`
+  display: flex;
+  justify-content: center;
+`;
 
 export const SearchContainer = styled.div`
   position: relative;

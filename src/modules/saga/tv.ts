@@ -10,6 +10,7 @@ import {
   GET_NOWPLAYING,
   GET_POPULAR,
   GET_ONTHEAIR,
+  getDetailAsync,
 } from "../tv";
 import { GET_TOP_RATED } from "../movie";
 
@@ -76,6 +77,20 @@ export function* getOnTheAirSaga() {
     yield put(getOnTheAirAsync.success(results));
   } catch (error) {
     yield put(getOnTheAirAsync.failure(error));
+  }
+}
+
+export function* getDetailSaga(
+  action: ReturnType<typeof getDetailAsync.request>
+) {
+  const {
+    data: { results },
+  } = yield call(tvApi.detail, action.payload);
+  console.log(results);
+  yield put(getDetailAsync.success(results));
+  try {
+  } catch (error) {
+    yield put(getDetailAsync.failure(error));
   }
 }
 

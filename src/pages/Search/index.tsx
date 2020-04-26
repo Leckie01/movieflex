@@ -3,6 +3,7 @@ import MoviesSection from "../../components/MoviesSection";
 import Poster from "../../components/Poster";
 import * as S from "./styles";
 import useSearch from "../../hooks/useSearch";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const Search = () => {
   const { onChangeHandler, search } = useSearch();
@@ -15,7 +16,13 @@ const Search = () => {
         onChange={onChangeHandler}
       />
       {search.isLoading && (
-        <div>영화, TV프로그램 목록을 불러오고 있습니다.</div>
+        <S.LoaderDots
+          type="ThreeDots"
+          color="#2dbaba"
+          height={70}
+          width={80}
+          timeout={2000} //3 secs
+        />
       )}
       {!search.isLoading &&
         search.isLoaded &&
