@@ -11,6 +11,20 @@ interface IProps {
 }
 
 const Poster: React.FC<IProps> = ({ movie, isMovie = false }) => {
+  if (!movie.poster_path) {
+    return null;
+  }
+
+  if (movie.season_number) {
+    return (
+      <MovieImg
+        src={`${IMAGE_BASE_URL}w300${movie.poster_path}`}
+        alt={isMovie ? `Image of ${movie.title}` : `Image of ${movie.name}`}
+        title={isMovie ? movie.title : movie.name}
+      />
+    );
+  }
+
   return (
     <MovieContainer>
       <Link to={isMovie ? `/movie/${movie.id}` : `/tv/${movie.id}`}>

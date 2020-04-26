@@ -103,7 +103,6 @@ const DetailSeasons = styled.div`
   width: 100%;
   height: 15vw;
   min-width: 10vw;
-
 `;
 
 const TVDetailContainer = () => {
@@ -141,6 +140,7 @@ const TVDetailContainer = () => {
                     <Genre key={id}>{name}</Genre>
                   ))}
                 </DetailGenres>
+                <span>시즌 목록</span>
                 <DetailSeasons>
                   {tvDetail.seasons!.map(show => (
                     <Poster key={show.id} movie={show} isMovie={false} />

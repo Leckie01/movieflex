@@ -11,6 +11,7 @@ export interface ICommonMovie {
   genres?: [{ id: number; name: string }];
   spoken_languages?: [{ iso_639_1: string; name: string }];
   seasons?: ISeasons[];
+  season_number?: number;
   runtime?: number;
   vote_average?: number;
   videos?: {
