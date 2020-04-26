@@ -5,15 +5,12 @@ import { useEffect } from "react";
 
 const useMovies = () => {
   const dispatch = useDispatch();
-  const {
-    movies: { data }
-  } = useSelector((state: RootState) => state.movie);
-
+  const { movies } = useSelector((state: RootState) => state.movie);
   useEffect(() => {
     dispatch(getMoviesAsync.request());
   }, [dispatch]);
 
-  return { ...data };
+  return { ...movies };
 };
 
 export default useMovies;

@@ -5,15 +5,13 @@ import { getTVAsync } from "../modules/tv";
 
 const useTV = () => {
   const dispatch = useDispatch();
-  const {
-    tv: { data }
-  } = useSelector((state: RootState) => state.tv);
+  const { tv } = useSelector((state: RootState) => state.tv);
 
   useEffect(() => {
     dispatch(getTVAsync.request());
   }, [dispatch]);
 
-  return { ...data };
+  return { ...tv };
 };
 
 export default useTV;

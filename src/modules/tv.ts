@@ -161,22 +161,22 @@ const tv = createReducer<ITVInitialState, ActionAsyncTypes>(initialState, {
   [GET_TV]: state => ({
     ...state,
     tv: {
-      ...state.tv
-    },
-    isLoading: true
+      ...state.tv,
+      isLoading: true
+    }
   }),
   [GET_TV_SUCCESS]: (state, action) => ({
     ...state,
     tv: {
       ...state.tv,
-      data: action.payload
-    },
-    isLoading: false,
-    isLoaded: true
+      data: action.payload,
+      isLoading: false,
+      isLoaded: true
+    }
   }),
   [GET_TV_FAILURE]: (state, action) => ({
     ...state,
-    tv: { ...state.tv },
+    tv: { ...state.tv, data: null, isLoading: false, isLoaded: false },
     error: action.payload
   }),
   [GET_NOWPLAYING]: state => ({
