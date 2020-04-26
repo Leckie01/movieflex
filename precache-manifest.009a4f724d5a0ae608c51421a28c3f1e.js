@@ -1,19 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c4a5e34f9e3ecec7742bdb9469b29db4",
+    "revision": "c593093a9b7c06e87a7544adc4c2a08e",
     "url": "/movieflex/index.html"
   },
   {
-    "revision": "f50a4d7971073379b2a6",
-    "url": "/movieflex/static/js/2.169219ad.chunk.js"
+    "revision": "99700f30bfa5ffb48d19",
+    "url": "/movieflex/static/css/2.f5298653.chunk.css"
+  },
+  {
+    "revision": "99700f30bfa5ffb48d19",
+    "url": "/movieflex/static/js/2.f369263a.chunk.js"
   },
   {
     "revision": "280b48dbc3281f342da16f66e41cf46c",
-    "url": "/movieflex/static/js/2.169219ad.chunk.js.LICENSE.txt"
+    "url": "/movieflex/static/js/2.f369263a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a42b2442479468e4264a",
-    "url": "/movieflex/static/js/main.85f0209a.chunk.js"
+    "revision": "13a22348669150ad81d8",
+    "url": "/movieflex/static/js/main.78d78444.chunk.js"
   },
   {
     "revision": "cdef7fd533430c803ccf",
