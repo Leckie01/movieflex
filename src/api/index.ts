@@ -7,8 +7,8 @@ const api = axios.create({
   baseURL: "https://api.themoviedb.org/3/",
   params: {
     api_key: API_KEY,
-    language: LANGUAGE
-  }
+    language: LANGUAGE,
+  },
 });
 
 export const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/";
@@ -22,12 +22,12 @@ export const moviesApi = {
   upcoming: async () => await api.get("movie/upcoming"),
   detail: (movie_id: number) =>
     api.get(`movie/${movie_id}`, {
-      params: { append_to_response: "videos" }
+      params: { append_to_response: "videos" },
     }),
-  search: (term: string) =>
-    api.get("search/movie", {
-      params: { query: term }
-    })
+  search: async (term: string) =>
+    await api.get("search/movie", {
+      params: { query: term },
+    }),
 };
 
 export const tvApi = {
@@ -37,10 +37,10 @@ export const tvApi = {
   airingToday: async () => await api.get("/tv/airing_today"),
   detail: (tv_id: number) =>
     api.get(`tv/${tv_id}`, {
-      params: { append_to_response: "seasons" }
+      params: { append_to_response: "seasons" },
     }),
-  search: (term: string) =>
-    api.get("search/tv", {
-      params: { query: term }
-    })
+  search: async (term: string) =>
+    await api.get("search/tv", {
+      params: { query: term },
+    }),
 };

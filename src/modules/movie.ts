@@ -112,38 +112,38 @@ const initialState = {
     data: null,
     isLoading: false,
     isLoaded: false,
-    error: null
+    error: null,
   },
   nowPlaying: {
     movies: null,
     isLoading: false,
     isLoaded: false,
-    error: null
+    error: null,
   },
   upcoming: {
     movies: null,
     isLoading: false,
     isLoaded: false,
-    error: null
+    error: null,
   },
   popular: {
     movies: null,
     isLoading: false,
     isLoaded: false,
-    error: null
+    error: null,
   },
   topRated: {
     movies: null,
     isLoading: false,
     isLoaded: false,
-    error: null
+    error: null,
   },
   detail: {
     movies: null,
     isLoading: false,
     isLoaded: false,
-    error: null
-  }
+    error: null,
+  },
 };
 
 const actions = {
@@ -152,7 +152,7 @@ const actions = {
   getTopRatedAsync,
   getUpcomingAsync,
   getPopularAsync,
-  getDetailAsync
+  getDetailAsync,
 };
 
 type ActionAsyncTypes = ActionType<typeof actions>;
@@ -160,33 +160,33 @@ type ActionAsyncTypes = ActionType<typeof actions>;
 const movie = createReducer<IMovieInitialState, ActionAsyncTypes>(
   initialState,
   {
-    [GET_MOVIES]: state => ({
+    [GET_MOVIES]: (state) => ({
       ...state,
       movies: {
-        ...state.movies
+        ...state.movies,
       },
-      isLoading: true
+      isLoading: true,
     }),
     [GET_MOVIES_SUCCESS]: (state, action) => ({
       ...state,
       movies: {
         ...state.movies,
-        data: action.payload
+        data: action.payload,
       },
       isLoading: false,
-      isLoaded: true
+      isLoaded: true,
     }),
     [GET_MOVIES_FAILURE]: (state, action) => ({
       ...state,
       movies: { ...state.movies },
-      error: action.payload
+      error: action.payload,
     }),
-    [GET_NOWPLAYING]: state => ({
+    [GET_NOWPLAYING]: (state) => ({
       ...state,
       nowPlaying: {
         ...state.nowPlaying,
-        isLoading: true
-      }
+        isLoading: true,
+      },
     }),
     [GET_NOWPLAYING_SUCCESS]: (state, action) => ({
       ...state,
@@ -195,8 +195,8 @@ const movie = createReducer<IMovieInitialState, ActionAsyncTypes>(
         movies: action.payload,
         isLoading: false,
         isLoaded: true,
-        error: null
-      }
+        error: null,
+      },
     }),
     [GET_NOWPLAYING_FAILURE]: (state, action) => ({
       ...state,
@@ -205,15 +205,15 @@ const movie = createReducer<IMovieInitialState, ActionAsyncTypes>(
         movies: null,
         isLoading: false,
         isLoaded: false,
-        error: action.payload
-      }
+        error: action.payload,
+      },
     }),
-    [GET_TOP_RATED]: state => ({
+    [GET_TOP_RATED]: (state) => ({
       ...state,
       topRated: {
         ...state.topRated,
-        isLoading: true
-      }
+        isLoading: true,
+      },
     }),
     [GET_TOP_RATED_SUCCESS]: (state, action) => ({
       ...state,
@@ -222,8 +222,8 @@ const movie = createReducer<IMovieInitialState, ActionAsyncTypes>(
         movies: action.payload,
         isLoading: false,
         isLoaded: true,
-        error: null
-      }
+        error: null,
+      },
     }),
     [GET_TOP_RATED_FAILURE]: (state, action) => ({
       ...state,
@@ -232,15 +232,15 @@ const movie = createReducer<IMovieInitialState, ActionAsyncTypes>(
         movies: null,
         isLoading: false,
         isLoaded: false,
-        error: action.payload
-      }
+        error: action.payload,
+      },
     }),
-    [GET_UPCOMING]: state => ({
+    [GET_UPCOMING]: (state) => ({
       ...state,
       upcoming: {
         ...state.upcoming,
-        isLoading: true
-      }
+        isLoading: true,
+      },
     }),
     [GET_UPCOMING_SUCCESS]: (state, action) => ({
       ...state,
@@ -249,8 +249,8 @@ const movie = createReducer<IMovieInitialState, ActionAsyncTypes>(
         movies: action.payload,
         isLoading: false,
         isLoaded: true,
-        error: null
-      }
+        error: null,
+      },
     }),
     [GET_UPCOMING_FAILURE]: (state, action) => ({
       ...state,
@@ -259,15 +259,15 @@ const movie = createReducer<IMovieInitialState, ActionAsyncTypes>(
         movies: null,
         isLoading: false,
         isLoaded: false,
-        error: action.payload
-      }
+        error: action.payload,
+      },
     }),
-    [GET_POPULAR]: state => ({
+    [GET_POPULAR]: (state) => ({
       ...state,
       popular: {
         ...state.popular,
-        isLoading: true
-      }
+        isLoading: true,
+      },
     }),
     [GET_POPULAR_SUCCESS]: (state, action) => ({
       ...state,
@@ -276,8 +276,8 @@ const movie = createReducer<IMovieInitialState, ActionAsyncTypes>(
         movies: action.payload,
         isLoading: false,
         isLoaded: true,
-        error: null
-      }
+        error: null,
+      },
     }),
     [GET_POPULAR_FAILURE]: (state, action) => ({
       ...state,
@@ -286,15 +286,15 @@ const movie = createReducer<IMovieInitialState, ActionAsyncTypes>(
         movies: null,
         isLoading: false,
         isLoaded: false,
-        error: action.payload
-      }
+        error: action.payload,
+      },
     }),
-    [GET_DETAIL]: state => ({
+    [GET_DETAIL]: (state) => ({
       ...state,
       detail: {
         ...state.detail,
-        isLoading: true
-      }
+        isLoading: true,
+      },
     }),
     [GET_DETAIL_SUCCESS]: (state, action) => ({
       ...state,
@@ -303,8 +303,8 @@ const movie = createReducer<IMovieInitialState, ActionAsyncTypes>(
         movies: action.payload,
         isLoading: false,
         isLoaded: true,
-        error: null
-      }
+        error: null,
+      },
     }),
     [GET_DETAIL_FAILURE]: (state, action) => ({
       ...state,
@@ -313,9 +313,9 @@ const movie = createReducer<IMovieInitialState, ActionAsyncTypes>(
         movies: null,
         isLoading: false,
         isLoaded: false,
-        error: action.payload
-      }
-    })
+        error: action.payload,
+      },
+    }),
   }
 );
 

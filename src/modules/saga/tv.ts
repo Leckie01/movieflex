@@ -9,23 +9,23 @@ import {
   GET_TV,
   GET_NOWPLAYING,
   GET_POPULAR,
-  GET_ONTHEAIR
+  GET_ONTHEAIR,
 } from "../tv";
 import { GET_TOP_RATED } from "../movie";
 
 export function* getTVSaga() {
   try {
     const {
-      data: { results: nowPlaying }
+      data: { results: nowPlaying },
     } = yield call(tvApi.airingToday);
     const {
-      data: { results: topRated }
+      data: { results: topRated },
     } = yield call(tvApi.topRated);
     const {
-      data: { results: onTheAir }
+      data: { results: onTheAir },
     } = yield call(tvApi.onTheAir);
     const {
-      data: { results: popular }
+      data: { results: popular },
     } = yield call(tvApi.popular);
 
     const shows = { nowPlaying, topRated, onTheAir, popular };
@@ -38,7 +38,7 @@ export function* getTVSaga() {
 export function* getNowplayingSaga() {
   try {
     const {
-      data: { results }
+      data: { results },
     } = yield call(tvApi.airingToday);
     yield put(getNowplayingAsync.success(results));
   } catch (error) {
@@ -49,7 +49,7 @@ export function* getNowplayingSaga() {
 export function* getTopRatedSaga() {
   try {
     const {
-      data: { results }
+      data: { results },
     } = yield call(tvApi.topRated);
     yield put(getTopRatedAsync.success(results));
   } catch (error) {
@@ -60,7 +60,7 @@ export function* getTopRatedSaga() {
 export function* getPopularSaga() {
   try {
     const {
-      data: { results }
+      data: { results },
     } = yield call(tvApi.popular);
     yield put(getPopularAsync.success(results));
   } catch (error) {
@@ -71,7 +71,7 @@ export function* getPopularSaga() {
 export function* getOnTheAirSaga() {
   try {
     const {
-      data: { results }
+      data: { results },
     } = yield call(tvApi.onTheAir);
     yield put(getOnTheAirAsync.success(results));
   } catch (error) {
