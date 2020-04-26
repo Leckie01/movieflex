@@ -1,11 +1,10 @@
 import React from "react";
 import { IMAGE_BASE_URL, VIDEO_BASE_URL } from "../../../api";
 import * as S from "./styles";
-import useDetail from "../../../hooks/useMovieDetail";
+import useMovieDetail from "../../../hooks/useMovieDetail";
 
-const DetailContainer = () => {
-  const { movies, isLoaded, isLoading, error } = useDetail();
-
+const MovieDetail = () => {
+  const { movies, isLoaded, isLoading, error } = useMovieDetail();
   return (
     <S.MovieContainer>
       {isLoading && <div>영화 정보를 불러오고 있습니다.</div>}
@@ -29,8 +28,10 @@ const DetailContainer = () => {
                 <S.DetailInfo>
                   <S.DetailGenres>
                     장르:{" "}
-                    {movies.genres!.map(({ id, name }) => (
-                      <S.Genre key={id}>{`${name}, `}</S.Genre>
+                    {movies.genres!.map(({ id, name }, idx) => (
+                      <S.Genre key={id}>
+                        {movies.genres!.length - 1 === idx ? name : `${name}, `}
+                      </S.Genre>
                     ))}
                   </S.DetailGenres>
                   <S.DetailVideos>
@@ -58,4 +59,4 @@ const DetailContainer = () => {
   );
 };
 
-export default DetailContainer;
+export default MovieDetail;

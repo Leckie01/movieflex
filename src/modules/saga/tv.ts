@@ -10,7 +10,8 @@ import {
   GET_NOWPLAYING,
   GET_POPULAR,
   GET_ONTHEAIR,
-  getDetailAsync
+  getDetailAsync,
+  GET_DETAIL
 } from "../tv";
 import { GET_TOP_RATED } from "../movie";
 
@@ -97,4 +98,5 @@ export function* tvSaga() {
   yield takeLatest(GET_TOP_RATED, getTopRatedSaga);
   yield takeLatest(GET_POPULAR, getPopularSaga);
   yield takeLatest(GET_ONTHEAIR, getOnTheAirSaga);
+  yield takeLatest(GET_DETAIL, getDetailSaga);
 }
