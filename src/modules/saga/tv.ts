@@ -10,23 +10,23 @@ import {
   GET_NOWPLAYING,
   GET_POPULAR,
   GET_ONTHEAIR,
-  getDetailAsync,
+  getDetailAsync
 } from "../tv";
 import { GET_TOP_RATED } from "../movie";
 
 export function* getTVSaga() {
   try {
     const {
-      data: { results: nowPlaying },
+      data: { results: nowPlaying }
     } = yield call(tvApi.airingToday);
     const {
-      data: { results: topRated },
+      data: { results: topRated }
     } = yield call(tvApi.topRated);
     const {
-      data: { results: onTheAir },
+      data: { results: onTheAir }
     } = yield call(tvApi.onTheAir);
     const {
-      data: { results: popular },
+      data: { results: popular }
     } = yield call(tvApi.popular);
 
     const shows = { nowPlaying, topRated, onTheAir, popular };
@@ -39,7 +39,7 @@ export function* getTVSaga() {
 export function* getNowplayingSaga() {
   try {
     const {
-      data: { results },
+      data: { results }
     } = yield call(tvApi.airingToday);
     yield put(getNowplayingAsync.success(results));
   } catch (error) {
@@ -50,7 +50,7 @@ export function* getNowplayingSaga() {
 export function* getTopRatedSaga() {
   try {
     const {
-      data: { results },
+      data: { results }
     } = yield call(tvApi.topRated);
     yield put(getTopRatedAsync.success(results));
   } catch (error) {
@@ -61,7 +61,7 @@ export function* getTopRatedSaga() {
 export function* getPopularSaga() {
   try {
     const {
-      data: { results },
+      data: { results }
     } = yield call(tvApi.popular);
     yield put(getPopularAsync.success(results));
   } catch (error) {
@@ -72,7 +72,7 @@ export function* getPopularSaga() {
 export function* getOnTheAirSaga() {
   try {
     const {
-      data: { results },
+      data: { results }
     } = yield call(tvApi.onTheAir);
     yield put(getOnTheAirAsync.success(results));
   } catch (error) {
@@ -83,11 +83,8 @@ export function* getOnTheAirSaga() {
 export function* getDetailSaga(
   action: ReturnType<typeof getDetailAsync.request>
 ) {
-  const {
-    data: { results },
-  } = yield call(tvApi.detail, action.payload);
-  console.log(results);
-  yield put(getDetailAsync.success(results));
+  const { data } = yield call(tvApi.detail, action.payload);
+  yield put(getDetailAsync.success(data));
   try {
   } catch (error) {
     yield put(getDetailAsync.failure(error));

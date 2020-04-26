@@ -34,14 +34,14 @@ const Search = () => {
       )}
       {search.all && search.all.movies.length > 0 && (
         <MoviesSection title="영화 검색 결과">
-          {search.all!.movies.map((movie) => (
+          {search.all!.movies.map(movie => (
             <Poster key={movie.id} movie={movie} isMovie={true} />
           ))}
         </MoviesSection>
       )}
       {search.all && search.all.tv.length > 0 && (
         <MoviesSection title="TV 프로그램 검색 결과">
-          {search.all!.tv.map((show) => (
+          {search.all!.tv.map(show => (
             <Poster key={show.id} movie={show} isMovie={false} />
           ))}
         </MoviesSection>

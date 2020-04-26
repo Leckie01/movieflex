@@ -19,6 +19,7 @@ export const Input = styled.input`
   height: 40px;
   font-size: 25px;
   padding: 10px;
+  margin-bottom: 1rem;
   ::placeholder {
     font-size: 25px;
     text-align: start;
