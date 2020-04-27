@@ -83,6 +83,7 @@ export const DetailInfo = styled.div`
   margin-top: 1em;
 
   .season-title {
+    margin-top: 2rem;
     margin-bottom: 1rem;
   }
 `;

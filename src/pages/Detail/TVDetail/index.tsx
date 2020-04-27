@@ -1,5 +1,5 @@
 import React from "react";
-import { IMAGE_BASE_URL, tvApi } from "../../../api";
+import { IMAGE_BASE_URL } from "../../../api";
 import Poster from "../../../components/Poster";
 import * as S from "./styles";
 import useTVDetail from "../../../hooks/useTVDetail";
@@ -27,7 +27,7 @@ const TVDetail = () => {
                 <S.DetailInfo>
                   <S.DetailGenres>
                     장르:{" "}
-                    {data.genres!.map(({ id, name }, idx: number) => (
+                    {data.genres!.map(({ id, name }, idx) => (
                       <S.Genre key={id}>
                         {data.genres!.length - 1 === idx ? name : `${name}, `}
                       </S.Genre>

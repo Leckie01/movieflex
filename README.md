@@ -1,6 +1,6 @@
 # Movieflex
 
-Movie Application with Typescript, Hooks
+Movie Application with React, Typescript, Hooks, Redux, Redux-saga
 
 ---
 
